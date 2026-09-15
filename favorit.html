@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BangBang - Favorite</title>
+    <!-- FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap" rel="stylesheet">
+    <!-- ICON -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body data-page="favorite">
+    <!-- START = NAV -->
+    <nav class="nav">
+        <!-- HAMBURGER -->
+        <div class="hamburger">
+            <span class="material-symbols-outlined">menu</span>
+        </div>
+        <!-- BANGBANG -->
+        <div class="logo">
+            <span class="material-symbols-outlined">sword_rose</span>
+            <span>BangBang</span>
+        </div>
+        <!-- LINKS -->
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="game.html">Explore Games</a></li>
+            <li><a href="favorit.html" class="pas">Favorites<span id="favorite-count"
+                        class="favorite-count hidden"></span></a></li>
+        </ul>
+        <!-- SEARCH -->
+        <div class="bungkus">
+            <div class="search-overlay">
+                <div class="search">
+                    <span id="close" class="material-symbols-outlined">arrow_forward</span>
+                    <input type="search" class="search-input" placeholder="Search for Games...">
+                    <button type="submit" id="search-icon" class="material-symbols-outlined">search</button>
+                </div>
+            </div>
+            <button type="button" id="search-icon-toggle" class="material-symbols-outlined">search</button>
+            <!-- PROFILE -->
+            <span class="profile">
+                <button type="button" id="profile-btn" class="profile-btn" aria-label="Menu akun">
+                    <span id="profile-initial"></span>
+                </button>
+                <div id="profile-dropdown" class="profile-dropdown hidden">
+                    <button type="button" id="logout-btn" class="logout-btn">Logout</button>
+                </div>
+            </span>
+        </div>
+    </nav>
+    <!-- END = NAV -->
+    <!-- START = SECTION 1 CARD -->
+    <section>
+        <!-- CONTAINER CARD-->
+        <div class="main">
+            <main id="grid-container" class="grid">
+            </main>
+        </div>
+        <!-- CARD -->
+        <div id="game-card" class="gc">
+            <article class="card" tab="0">
+                <div class="thumbnail-head">
+                    <div class="thumbnail-perf"></div>
+                    <img class="thumbnail-image" loading="lazy" alt="">
+                    <span class="thumbnail-genre"></span>
+                    <button class="thumbnail-favorite" aria-label="Tandai favorit"></button>
+                </div>
+                <div class="thumbnail-body">
+                    <h3 class="thumbnail-title"></h3>
+                    <div class="thumbnail-pp">
+                        <span class="thumbnail-platform"></span>
+                        <span class="thumbnail-publisher"></span>
+                    </div>
+                    <p class="thumbnail-desc"></p>
+                </div>
+            </article>
+        </div>
+        <!-- LOADING -->
+        <div id="loading" class="js">
+            <div class="process">
+                <span class="process-text">Loading</span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
+        <!-- PENCARIAN/FILTER GA ADA HASIL -->
+        <div id="no-results-found" class="js">
+            <div class="process">
+                <span class="process-text">No Result Found :(</span>
+                <p class="empty-desc">Try changing your search or filter options.</p>
+            </div>
+        </div>
+        <!-- GAGAL MEMUAT DATA -->
+        <div id="failed-to-load" class="js">
+            <div class="process">
+                <span class="process-text">Failed to Load :(</span>
+                <p class="empty-desc">Refresh the page or check your internet connection and try again.</p>
+            </div>
+        </div>
+        <div id="no-favorites" class="js">
+            <div class="process">
+                <span class="process-text">No favorite games yet</span>
+                <p class="empty-desc">Click the heart icon (♡) on a game you like to add it here.</p>
+            </div>
+        </div>
+    </section>
+    <!-- END = SECTION 1 CARD -->
+    <!-- START = SECTION 2 DETAIL -->
+    <section>
+        <!-- CONTAINER DETAIL -->
+        <div id="detail-container" class="detail-container">
+            <div id="detail-body" class="detail-body"></div>
+        </div>
+        <!-- DETAIL -->
+        <div id="detail-detail" class="js">
+            <div class="detail">
+                <button class="close-btn" aria-label="Tutup">✕</button>
+                <img class="detail-img" alt="">
+                <div class="detail-content">
+                    <h2 class="detail-title"></h2>
+                    <div class="detail-tags">
+                        <span class="tag-genre"></span>
+                        <span class="tag-platform"></span>
+                        <span class="tag-publisher"></span>
+                    </div>
+                    <p class="desc"></p>
+                    <div class="detail-facts">
+                        <div><b>Developer:</b> <span data-fact="developer"></span></div>
+                        <div><b>Rilis:</b> <span data-fact="release_date"></span></div>
+                        <div><b>Publisher:</b> <span data-fact="publisher"></span></div>
+                        <div><b>Platform:</b> <span data-fact="platform"></span></div>
+                    </div>
+                    <a class="play" target="_blank">Play Now</a>
+                </div>
+            </div>
+        </div>
+        <!-- ERROR -->
+        <div id="detail-error" class="js">
+            <div class="error">
+                <button class="close-btn" aria-label="Tutup">✕</button>
+                <p class="process-text">Failed to Load :(</p>
+                <p class="empty-desc">Failed to fetch game details.</p>
+            </div>
+        </div>
+    </section>
+    <!-- END = SECTION 1 CARD-->
+    <!-- START = FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <div class="logo">
+                    <span class="material-symbols-outlined">sword_rose</span>
+                    <span>BangBang</span>
+                </div>
+            </div>
+            <div class="footer-nav">
+                <a href="index.html">Home</a>
+                <a href="game.html">Explore Games</a>
+                <a href="favorit.html">Favorites</a>
+            </div>
+            <div class="footer-credit">
+                <h4>Tentang</h4>
+                <p>Data game disediakan oleh <a href="https://www.freetogame.com" target="_blank">FreeToGame.com</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <small>&copy; 2026 BangBang. All rights reserved.</small>
+        </div>
+    </footer>
+    <!-- END = FOOTER -->
+    <!-- JAVA SCRIPT -->
+    <script src="js/auth.js"></script>
+    <script src="js/script.js"></script>
+    <!-- JAVA SCRIPT -->
+</body>
+
+</html>
